@@ -115,16 +115,15 @@ https://medium.com/swlh/setup-a-ci-cd-pipeline-to-automate-react-app-deployment-
     
 #### Consumer using VS Code
 
-You can look for requests.http file under src folder to know what to consume
+You can look for requests.http file to know what to consume
 
 
 ### Authentication
 
 In order to do authentication you will be required to send the following HTTP headers parameters as part of your requests:
 
-- Timestamp
-- Nonce
-- Signature
+- Authorization Bearer token
+- Content-Type
 
 All fields are required except otherwise stated.
 
