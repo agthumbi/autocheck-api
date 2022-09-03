@@ -32,13 +32,15 @@ npm install
 npm start
 ```
 
-#### 2)Open your local browser and verify the DVT Music Portal is working by accessing: 
+
+#### 2)Open your local browser and verify is working by accessing: 
 
 #Landin page
 ```
 http://localhost:3000/  
 
 ```
+
 
 **Note**
 
@@ -75,7 +77,32 @@ https://medium.com/swlh/setup-a-ci-cd-pipeline-to-automate-react-app-deployment-
 
 ```
 
+##### Running the Docker containers
 
+Now that we have defined our Docker files, we can run our app solely on Docker.
+
+To start our app, write the following command in your terminal:
+
+``` 
+docker-compose up dev
+
+```
+This will start it in development mode. We even get a file watcher when saving our files so we don't have to re-run it every time we make change 😍.
+
+And to start our app in production mode, you guessed it... run the following command in your terminal:
+
+``` 
+docker-compose up prod
+
+```
+Make a GET request yet again to http://localhost:3000 and... voilà! Should work as expected.
+
+P.S: If you want to ditch the terminal logging, you can run the container in a separate daemon using the -d flag like so:
+
+``` 
+docker-compose up -d prod
+
+```
 
 ## PART III : Consume APIs
 
@@ -106,40 +133,17 @@ The following describes the important headers required to be sent.
 
 Headers        | Description 
 :--------------|:------------------------------------------------------------------------------------------
-Timestamp      | Requst timestamp in epoch (unix).It must be in seconds and NOT miliseconds e.g 1643208739               
-Nonce          | A unique generated valuue for each request.It should not be repeated.               
-Signature      | The signature is calculated from a combination defined data elements seperated by the special symbols.See pre-scripts on postman snippets               
+Authorization  | This is in form bearer token that is generated ftom jwt token during user login              
+   
 Content-Type   | The MIME type of the body of the request e.g. application/json  
 
 #### Sample Authentication Headers
 
 ` Content-Type:application/json `
 
-` Timestamp:1643208739 `
-
-` Nonce:39640f06aeb78ac46eb0a0b3e1045fe8 `
-
-` Signature:cbzXGpglR43i6aZYFgrjJFc6TNGXsOzGdG+JY5lJpXo= ` 
+` Authorizaiton:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY2MjIxMjczNywiZXhwIjoxNjYyMjEyNzk3fQ.ylqF3ObPyrulwcqClPMb3Okm62F4UosArq00NJBnppI `
 
 
-##### Signature Computation
-
-The pseudo-code below shows how this can be done with any programming language of choice
-
-` String rawCipher=timestamp + '$$Autocheck$$' + nonce `
-
-` String Secret_Buffer='Autocheck is de best' `
-
-` String signature=Base64(Hash(rawCipher,Secret_Buffer)) `
-
-The expected response if compututation is wrong pr not supplied is as follows:
-
-` [
-    {
-        "code": "E0",
-        "message": "Authentication Failed.Invalid signature"
-    }
-` ]
 
 
 ### Welcome Page
@@ -167,21 +171,19 @@ host            | Base URL
 
 ##### Excpected Response for non-existing checkout cart
 
-` [
-    {
-        "code": "E2",
-        "message": "No Record(s) Exists"
-    }
-` ]
+` {
+  "statusCode": 401,
+  "message": "Unauthorized"
+`}
 
 ### Reponse Codes
 
 Code            | Description Message 
 :---------------|:------------------------------------------------------------------------------------------
 0               | Success
-E1              | Internal service error.It could timeout with the network/database level
-E2              | Data not found or does not exists from the records
-E0              | General errors 
+1               | No Record returned
+
+ 
 
 
 ## PART III : Overal System Design
