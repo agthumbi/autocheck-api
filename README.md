@@ -169,7 +169,7 @@ host            | Base URL
 
 
 
-##### Excpected Response for non-existing checkout cart
+##### Excpected Response for unauthorized API consumption
 
 ` {
   "statusCode": 401,
