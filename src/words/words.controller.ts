@@ -11,11 +11,7 @@ export class WordsController {
     constructor(private readonly wordsService:WordsService,private readonly authService: AuthService) { }
 
 
-    @UseGuards(LocalAuthGuard)
-    @Post('auth/login')
-    async login(@Request() req) {
-      return this.authService.login(req.user);
-    }
+  
     //Top 10 most occurring words in the titles of the last 25 stories
     @Get('/last-25-stories')  
     @UseGuards(JwtAuthGuard)

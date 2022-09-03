@@ -5,7 +5,7 @@ GET http://localhost:3000/
 
 ##### login to access the API
 
-POST http://localhost:3000/auth/login HTTP/1.1
+POST http://localhost:3000/auth/login 
 Content-Type: application/json
 
 {
