@@ -69,15 +69,7 @@ https://www.jenkins.io/doc/book/installing/
 
 ```
 
-#### 2) Create config on jenkins for pipeline readiness
-Please follow the link for more details
-
-```
-https://medium.com/swlh/setup-a-ci-cd-pipeline-to-automate-react-app-deployment-on-aws-ec2-82bd0c194f77
-
-```
-
-##### Running the Docker containers
+#### 2) Running the Docker containers
 
 Now that we have defined our Docker files, we can run our app solely on Docker.
 
@@ -103,6 +95,15 @@ P.S: If you want to ditch the terminal logging, you can run the container in a s
 docker-compose up -d prod
 
 ```
+
+#### 3) Create config on jenkins for pipeline readiness
+Please follow the link for more details
+
+```
+https://medium.com/swlh/setup-a-ci-cd-pipeline-to-automate-react-app-deployment-on-aws-ec2-82bd0c194f77
+
+```
+
 
 ## PART III : Consume APIs
 
