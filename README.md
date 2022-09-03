@@ -26,50 +26,58 @@ It's up to you what the endpoints look like and how exactly the response is retu
 
 ``` 
 //on local
-git clone https://github.com/agthumbi/Autocheck.git
-cd Autocheck
+git clone https://github.com/agthumbi/autocheck-api.git
+cd autocheck-api
 npm install
 npm start
 ```
 
-#### 2)Open your local browser and verify the Autocheck API is working by accessing: 
+#### 2)Open your local browser and verify the DVT Music Portal is working by accessing: 
 
 #Landin page
 ```
-http://localhost/  
-
-```
-
-#HTTP Status
-```
-http://localhost/status/
+http://localhost:3000/  
 
 ```
 
 **Note**
 
-Make sure you dont have another port ::80 running to avoid conflict issues.
+Make sure you dont have another port ::3000 running to avoid conflict issues.
 
 #### 3) Dependencies
 
-##### MYSQL Installation
-You will need to install MYSQL on your operating system.Recommended,you can use MYSQL version 8.
-Here is the download link below for your reference.You should follow the instructions on how install mysql-installer-web-community-8*.ms
+##### Node Installation
+You will need to install Node and npm  on your operating system.Recommended,you can use node  14 and above.
+Here is the download link below for your reference.You should follow the instructions on how install node and npm
 on their web page.
 
 ```
-https://dev.mysql.com/downloads/installer/
+https://nodejs.org/en/blog/release/v14.17.3/
 
 ```
-##### Import DB Structure
-Import scheme usign MYSQL workbench wizard and make sure you got no errors.Download the below link to access data to import to your workbench
 
 
- [Autocheck DB structure Link](https://github.com/agthumbi/Autocheck/tree/main/Autocheck_db_structure)
+## PART II : Download & Build on Jenkins to Docker Container
+
+#### 1) You will need to install jenkins on your server.
+Here is the download link below for your reference.You should follow the instructions.
+
+```
+https://www.jenkins.io/doc/book/installing/ 
+
+```
+
+#### 2) Create config on jenkins for pipeline readiness
+Please follow the link for more details
+
+```
+https://medium.com/swlh/setup-a-ci-cd-pipeline-to-automate-react-app-deployment-on-aws-ec2-82bd0c194f77
+
+```
 
 
 
-## PART II : Consume APIs
+## PART III : Consume APIs
 
 ### Feature
 
@@ -77,13 +85,9 @@ Import scheme usign MYSQL workbench wizard and make sure you got no errors.Downl
 - Restful error handling
 - Security Authentication
     
-#### Consumer using Postman
+#### Consumer using VS Code
 
-Download the postman enviroment via the link below.
-
-Click on the button below to access the API snippets.
-
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/25d69b6291f65c89e675)
+You can look for requests.http file under src folder to know what to consume
 
 
 ### Authentication
