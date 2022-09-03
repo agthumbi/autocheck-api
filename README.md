@@ -194,7 +194,7 @@ E0              | General errors
 
 #### General Flow Design
 
-![Autocheck](https://github.com/agthumbi/Autocheck/blob/main/system_design/general_flow.PNG)
+![Autocheck](https://github.com/agthumbi/paystack/blob/main/system_design/general_flow.PNG)
 
 ##### Process Flow
 
@@ -207,14 +207,14 @@ E0              | General errors
 
 #### System Design by exploring dockers
 
-![Autocheck](https://github.com/agthumbi/Autocheck/blob/main/system_design/design_flow_kubernetes.PNG)
+![Autocheck](https://github.com/agthumbi/paystack/blob/main/system_design/design_flow_kubernetes.PNG)
 
 Above design is improving more on workload by introducing kubernetes ecosystem.
 
 
 #### System Design using kubernetes
 
-![Autocheck](https://github.com/agthumbi/Autocheck/blob/main/system_design/flow_design_rabbit.PNG)
+![Autocheck](https://github.com/agthumbi/paystack/blob/main/system_design/flow_design_rabbit.PNG)
 
 We can also improve more on the design by including queue tools such as rabbit m queue to hanldle many requests from external nextwork
 
@@ -257,9 +257,6 @@ We can free the read load on data by having mirroring data to secondary databses
 
 We can increase the amount of load balancer to handle heavy load of requests coming from external network.Through layer 7 type,we can re-routing all the traffic to the respective server which has the micro service or has the a certain kubernetes that will route to a particular dockernized microservice.
 
-#### CDN
-
-We can use CDN technology to pull product images depending on the region to reduce the load of requesting of extracting images from  central location where servers are.
 
 #### Server
 
