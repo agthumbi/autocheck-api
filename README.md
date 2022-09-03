@@ -1,12 +1,21 @@
-# autocheck-api
-Autocheck calls talks to a public API of HackerNews.
 ![AutoCheck Africa](https://media.autochek.africa/file/publicAssets/full-color-logo-new.png)
 
-# Pay Stack Rest API-BE Coding Challenge
-A paystack api for small shopping cart application.Lets Assume that you have a
-list of products in a category (eg. food or clothing) which contain a set of
-standard attributes (sku, selling price, stock level, expiration date etc.) which a
-user can add to, remove from and edit inside a car.
+# Autocheck API
+Autocheck calls talks to a public API of HackerNews.
+
+# Autocheck Rest API Coding Challenge
+In this assignment, we’ll be asking you to build a small app that talks to a public API of
+HackerNews. On the following page you’ll find the documentation:
+
+https://github.com/HackerNews/API
+Your app should have three endpoints:
+1. Top 10 most occurring words in the titles of the last 25 stories
+2. Top 10 most occurring words in the titles of the post of exactly the last week
+3. Top 10 most occurring words in titles of the last 600 stories of users with at least 10.000 karma
+Languages and Frameworks
+This task should be completed using
+● NestJs Framework with emphasis on Typescript.
+It's up to you what the endpoints look like and how exactly the response is returned (we do expect the latter
 
 ## Steps
    
@@ -17,13 +26,13 @@ user can add to, remove from and edit inside a car.
 
 ``` 
 //on local
-git clone https://github.com/agthumbi/paystack.git
-cd paystack
+git clone https://github.com/agthumbi/Autocheck.git
+cd Autocheck
 npm install
 npm start
 ```
 
-#### 2)Open your local browser and verify the Paystack API is working by accessing: 
+#### 2)Open your local browser and verify the Autocheck API is working by accessing: 
 
 #Landin page
 ```
@@ -56,7 +65,7 @@ https://dev.mysql.com/downloads/installer/
 Import scheme usign MYSQL workbench wizard and make sure you got no errors.Download the below link to access data to import to your workbench
 
 
- [Paystack DB structure Link](https://github.com/agthumbi/paystack/tree/main/paystack_db_structure)
+ [Autocheck DB structure Link](https://github.com/agthumbi/Autocheck/tree/main/Autocheck_db_structure)
 
 
 
@@ -113,9 +122,9 @@ Content-Type   | The MIME type of the body of the request e.g. application/json
 
 The pseudo-code below shows how this can be done with any programming language of choice
 
-` String rawCipher=timestamp + '$$PAYSTACK$$' + nonce `
+` String rawCipher=timestamp + '$$Autocheck$$' + nonce `
 
-` String Secret_Buffer='Paystack is de best' `
+` String Secret_Buffer='Autocheck is de best' `
 
 ` String signature=Base64(Hash(rawCipher,Secret_Buffer)) `
 
@@ -148,7 +157,7 @@ host            | Base URL
 
 #### Excpected Response 
 
-`Welcome to PayStack api `
+`Welcome to Autocheck api `
 
 ### Status Check
 
@@ -592,7 +601,7 @@ E0              | General errors
 
 #### General Flow Design
 
-![Paystack](https://github.com/agthumbi/paystack/blob/main/system_design/general_flow.PNG)
+![Autocheck](https://github.com/agthumbi/Autocheck/blob/main/system_design/general_flow.PNG)
 
 ##### Process Flow
 
@@ -605,14 +614,14 @@ E0              | General errors
 
 #### System Design by exploring dockers
 
-![Paystack](https://github.com/agthumbi/paystack/blob/main/system_design/design_flow_kubernetes.PNG)
+![Autocheck](https://github.com/agthumbi/Autocheck/blob/main/system_design/design_flow_kubernetes.PNG)
 
 Above design is improving more on workload by introducing kubernetes ecosystem.
 
 
 #### System Design using kubernetes
 
-![Paystack](https://github.com/agthumbi/paystack/blob/main/system_design/flow_design_rabbit.PNG)
+![Autocheck](https://github.com/agthumbi/Autocheck/blob/main/system_design/flow_design_rabbit.PNG)
 
 We can also improve more on the design by including queue tools such as rabbit m queue to hanldle many requests from external nextwork
 
