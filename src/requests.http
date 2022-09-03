@@ -1,0 +1,33 @@
+##### Welcome page
+
+GET http://localhost:3000/
+
+
+##### login to access the API
+
+POST http://localhost:3000/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "Len", 
+  "password": "Marais"
+}
+
+##### Top 10 most occurring words in the titles of the last 25 stories API call
+
+GET http://localhost:3000/words/last-25-stories
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY2MjIxMzI5NCwiZXhwIjoxNjYyMjEzMzU0fQ.ukhe3tyqFm3Jp-Ox_lwnRwieJFBWAJFjq95kNYzrqPY
+Content-Type: application/json
+
+
+######Top 10 most occurring words in the titles of the post of exactly the last week API call
+
+GET http://localhost:3000/words/week-stories
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY2MjIxMjczNywiZXhwIjoxNjYyMjEyNzk3fQ.ylqF3ObPyrulwcqClPMb3Okm62F4UosArq00NJBnppI
+Content-Type: application/json
+
+####### Top 10 most occurring words in titles of the last 600 stories of users with at least 10.000 karm API call
+
+GET http://localhost:3000/words/10k-karmas
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY2MjIxMjczNywiZXhwIjoxNjYyMjEyNzk3fQ.ylqF3ObPyrulwcqClPMb3Okm62F4UosArq00NJBnppI
+Content-Type: application/json
